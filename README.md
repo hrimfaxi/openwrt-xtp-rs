@@ -52,7 +52,7 @@
 
 3. 编译产物位于：
    ```
-   bin/packages/<arch>/base/xtp-rs_*.ipk
+   bin/packages/<arch>/base/xtp-rs_*.ipk  # 或 .apk（OpenWrt 23.05+）
    ```
 
 ### 支持的架构
@@ -69,8 +69,13 @@
 ### 安装到路由器
 
 ```bash
+# OpenWrt 23.05 以下版本使用 ipk/opkg
 scp bin/packages/<arch>/base/xtp-rs_*.ipk root@<router-ip>:/tmp/
 ssh root@<router-ip> opkg install /tmp/xtp-rs_*.ipk
+
+# OpenWrt 23.05+ 使用 apk
+scp bin/packages/<arch>/base/xtp-rs_*.apk root@<router-ip>:/tmp/
+ssh root@<router-ip> apk add --allow-untrusted /tmp/xtp-rs_*.apk
 ```
 
 ## 依赖
