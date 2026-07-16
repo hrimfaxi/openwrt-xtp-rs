@@ -73,6 +73,7 @@ define Package/xtp-rs/install
 	$(INSTALL_DIR) $(1)/etc/xtp-rs
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/etc/xtp-rs/config.toml $(1)/etc/xtp-rs/
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/etc/xtp-rs/Country-only-cn-private.mmdb $(1)/etc/xtp-rs/
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/etc/xtp-rs/geosite.dat $(1)/etc/xtp-rs/
 
 	# init 脚本
 	$(INSTALL_DIR) $(1)/etc/init.d
